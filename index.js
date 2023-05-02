@@ -45,6 +45,10 @@ $(document).ready(function(){
           }
         if ($('#subtract').is(':checked')) {
           question.answer = num1 - num2;
+          while (num1 < num2) {
+            num1 = randomNumberGenerator(10);
+            num2 = randomNumberGenerator(10);
+          }
           question.equation = String(num1) + " - " + String(num2);
           $('#multiply').prop('checked', false);
           $('#divide').prop('checked', false);
@@ -59,6 +63,10 @@ $(document).ready(function(){
         }
         if ($('#divide').is(':checked')) {
           question.answer = num1 / num2;
+          while (num1 % num2 !== 0) {
+            num1 = randomNumberGenerator(10);
+            num2 = randomNumberGenerator(10);
+          }
           question.equation = String(num1) + " / " + String(num2);
           $('#add').prop('checked', false);
           $('#subtract').prop('checked', false);
